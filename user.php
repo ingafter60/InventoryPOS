@@ -26,14 +26,14 @@ desired effect
   <?php include 'inc/header.php'; ?>
 
   <!-- Left side column. contains the logo and sidebar -->
-  <?php include 'inc/asideadmin.php'; ?>
+  <?php include 'inc/asideuser.php'; ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Admin Dashboard
+        User Dashboard
         <small></small>
       </h1>
       <ol class="breadcrumb">
