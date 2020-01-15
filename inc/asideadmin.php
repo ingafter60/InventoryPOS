@@ -9,7 +9,7 @@
           <img src="assets/AdminLTE/img/tika.JPG" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Tika</p>
+          <p><?php  echo $_SESSION['username']; ?></p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>

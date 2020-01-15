@@ -24,7 +24,7 @@
               <!-- The user image in the navbar-->
               <img src="assets/AdminLTE/img/tika.JPG" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
-              <span class="hidden-xs">Tika</span>
+              <span class="hidden-xs"><?php echo $_SESSION['username'];?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
@@ -32,7 +32,7 @@
                 <img src="assets/AdminLTE/img/tika.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Kartika - Web Developer
+                  <?php echo $_SESSION['username']; ?> - Web Developer
                   <small>since 2020</small>
                 </p>
               </li>
@@ -58,7 +58,7 @@
                   <a href="#" class="btn btn-default btn-flat">Change Password</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="logout.php" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

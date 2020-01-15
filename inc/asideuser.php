@@ -9,7 +9,7 @@
           <img src="assets/AdminLTE/img/nyoman.JPG" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Nyoman</p>
+          <p><?php echo $_SESSION['username']; ?></p>
           <!-- Status -->
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
