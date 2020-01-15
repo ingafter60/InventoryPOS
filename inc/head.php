@@ -1,3 +1,16 @@
+<?php
+
+include_once 'connectdb.php';
+session_start();
+
+if(isset($_POST['btn_login'])){
+  $useremail    = $_POST['txt_email' ];
+  $password = $_POST['txt_password'];
+  
+  echo $useremail . " - " . $password;
+}
+?>
+
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
