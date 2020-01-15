@@ -1,4 +1,30 @@
 <?php include 'inc/head.php'; ?>
+<?php
+
+include_once 'connectdb.php';
+session_start();
+
+if(isset($_POST['btn_login'])){
+  $useremail = $_POST['txt_email' ];
+  $password  = $_POST['txt_password'];
+  
+  // echo $useremail . " - " . $password;
+
+  $select = $pdo->prepare(" 
+    SELECT * FROM tbl_user 
+    WHERE useremail='$useremail' 
+    AND password='$password'");
+
+  $select->execute();
+  $row = $select->fetch(PDO::FETCH_ASSOC);
+  if($row['useremail'] == $useremail AND $row['password'] == $password){
+    $success = 'Login successfull';
+    header('refresh:1; dashboard.php');
+  } else {
+    echo "Log in failed";
+  }
+}
+?>
 
 <body class="hold-transition login-page">
 <div class="login-box">
