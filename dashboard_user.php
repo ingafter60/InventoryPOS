@@ -1,4 +1,13 @@
+<?php    
+include_once 'connectdb.php';
+session_start();
+
+if($_SESSION['useremail'] == ""){
+  header('location:index.php');
+}
+?>
 <?php include 'inc/head.php'; ?>
+
 <!--
 BODY TAG OPTIONS:
 =================

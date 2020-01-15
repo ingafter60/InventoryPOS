@@ -1,4 +1,5 @@
-<?php include 'inc/head.php'; ?>
+<?php 
+include 'inc/head.php'; ?>
 <?php
 
 include_once 'connectdb.php';
@@ -10,19 +11,30 @@ if(isset($_POST['btn_login'])){
   
   // echo $useremail . " - " . $password;
 
-  $select = $pdo->prepare(" 
-    SELECT * FROM tbl_user 
-    WHERE useremail='$useremail' 
-    AND password='$password'");
-
+  $select = $pdo->prepare("SELECT * FROM tbl_user WHERE useremail='$useremail' AND password='$password' ");
   $select->execute();
   $row = $select->fetch(PDO::FETCH_ASSOC);
+
   if($row['useremail'] == $useremail AND $row['password'] == $password AND $row['role'] == 'Admin'){
+
+    $_SESSION['userid']    = $row['userid'];
+    $_SESSION['username']  = $row['username'];
+    $_SESSION['useremail'] = $row['useremail'];
+    $_SESSION['role']      = $row['role'];
+    
     $success = 'Login successfull';
-    header('refresh:1; dashboard.php');
+    header('refresh:1; dashboard_admin.php');
+
   } else if ($row['useremail'] == $useremail AND $row['password'] == $password AND $row['role'] == 'User'){
+
+    $_SESSION['userid']    = $row['userid'];
+    $_SESSION['username']  = $row['username'];
+    $_SESSION['useremail'] = $row['useremail'];
+    $_SESSION['role']      = $row['role'];
+    
     $success = 'Login successfull';
-    header('refresh:1; user.php');    
+    header('refresh:1; dashboard_user.php');  
+
   } else {
     echo "Log in failed";
   }
